@@ -1,15 +1,15 @@
 
-import { useState } from 'react';
-import AnimatedSection from '../AnimatedSection';
-import ScrollSection from '../ScrollSection';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import AnimatedSection from '../AnimatedSection';
 import PortfolioCard from '../PortfolioCard';
+import ScrollSection from '../ScrollSection';
 
 const PortfolioSection = () => {
   const categories = ['All', 'Web Development', 'Mobile Development', 'Custom Software', 'UI/UX Design'];
   const [activeCategory, setActiveCategory] = useState('All');
-  
+
   const projects = [
     {
       title: 'E-commerce Platform',
@@ -55,17 +55,14 @@ const PortfolioSection = () => {
     }
   ];
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
+  const filteredProjects = activeCategory === 'All'
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
   return (
     <ScrollSection id="portfolio" className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6">
         <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-primary/10 text-primary mb-4">
-            Our Portfolio
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Showcasing our best work
           </h2>
@@ -73,8 +70,8 @@ const PortfolioSection = () => {
             Explore our recent projects and see how we've helped our clients achieve their goals.
           </p>
         </AnimatedSection>
-        
-        <motion.div 
+
+        <motion.div
           className="flex flex-wrap justify-center gap-3 mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +95,7 @@ const PortfolioSection = () => {
             </motion.div>
           ))}
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <PortfolioCard

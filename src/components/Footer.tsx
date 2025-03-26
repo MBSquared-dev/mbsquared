@@ -1,17 +1,17 @@
 
+import { ArrowUpRight, Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Twitter, Mail, ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-background border-t border-border py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           <div className="space-y-4">
             <Link to="/" className="text-xl font-bold text-gradient">
-              CodeCraft
+              MBS
             </Link>
             <p className="text-muted-foreground max-w-xs">
               Crafting innovative digital solutions with precision and passion.
@@ -28,7 +28,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="space-y-4">
             <h3 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">
               Company
@@ -56,7 +56,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h3 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">
               Services
@@ -84,7 +84,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="space-y-4">
             <h3 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">
               Contact
@@ -108,10 +108,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-border/50 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} CodeCraft. All rights reserved.
+            © {currentYear} MBS. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors">

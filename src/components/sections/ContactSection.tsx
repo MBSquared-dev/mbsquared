@@ -1,8 +1,8 @@
 
-import { Mail, MapPin, Phone, Clock, ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock, Mail, MapPin, Phone } from 'lucide-react';
 import AnimatedSection from '../AnimatedSection';
-import ScrollSection from '../ScrollSection';
 import ContactForm from '../ContactForm';
+import ScrollSection from '../ScrollSection';
 
 const ContactSection = () => {
   const contactInfo = [
@@ -35,7 +35,7 @@ const ContactSection = () => {
       link: null
     }
   ];
-  
+
   const faq = [
     {
       question: 'What is your typical process for new projects?',
@@ -70,9 +70,6 @@ const ContactSection = () => {
       <ScrollSection id="contact" className="py-20 md:py-28 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-primary/10 text-primary mb-4">
-              Contact Us
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Let's start a conversation
             </h2>
@@ -80,7 +77,7 @@ const ContactSection = () => {
               Have a project in mind or want to learn more about our services? We're here to help and answer any questions you might have.
             </p>
           </AnimatedSection>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
             {contactInfo.map((info, index) => (
               <AnimatedSection key={info.title} delay={index * 100}>
@@ -91,8 +88,8 @@ const ContactSection = () => {
                   <h3 className="text-lg font-semibold mb-1">{info.title}</h3>
                   <p className="text-muted-foreground text-sm mb-3">{info.description}</p>
                   {info.link ? (
-                    <a 
-                      href={info.link} 
+                    <a
+                      href={info.link}
                       className="font-medium text-primary hover:underline"
                     >
                       {info.contact}
@@ -104,7 +101,7 @@ const ContactSection = () => {
               </AnimatedSection>
             ))}
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <AnimatedSection animation="slide-in-left">
               <div className="space-y-6">
@@ -145,12 +142,12 @@ const ContactSection = () => {
                 </div>
               </div>
             </AnimatedSection>
-            
+
             <AnimatedSection animation="slide-in-right">
               <ContactForm />
             </AnimatedSection>
           </div>
-          
+
           <AnimatedSection className="mt-24">
             <div className="glass-card rounded-xl overflow-hidden p-8 md:p-12 border border-white/20">
               <h3 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
@@ -164,22 +161,22 @@ const ContactSection = () => {
               </div>
             </div>
           </AnimatedSection>
-          
-          <AnimatedSection className="mt-24">
+
+          {/* TODO: Add map after we have a physical address */}
+          {/* <AnimatedSection className="mt-24">
             <div className="relative rounded-xl overflow-hidden h-96 glass-card border border-white/20">
               <iframe
                 title="Office Location"
                 className="absolute inset-0 w-full h-full"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12615.261941253381!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858080a379575d%3A0x6cf7a313d6a53ec7!2sSan%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1645583291955!5m2!1sen!2sus"
-                frameBorder="0"
                 loading="lazy"
                 style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }}
               ></iframe>
             </div>
-          </AnimatedSection>
+          </AnimatedSection> */}
         </div>
       </ScrollSection>
-      
+
       <ScrollSection id="cta" className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="relative glass-card rounded-xl overflow-hidden p-8 md:p-12 border border-white/20">
@@ -191,7 +188,7 @@ const ContactSection = () => {
               <p className="text-muted-foreground text-lg mb-8">
                 Contact us today to discuss how we can help you achieve your software development goals.
               </p>
-              <a 
+              <a
                 onClick={() => scrollToSection('contact')}
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-primary text-white font-medium transition-all hover:bg-primary/90 cursor-pointer"
               >
