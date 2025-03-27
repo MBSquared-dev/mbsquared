@@ -1,44 +1,66 @@
-
+/* Import font from Google Fonts: "Inter" with various weights (100-900) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* Tailwind CSS layers for utility-based CSS framework */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles are general default styles applied to the page */
 @layer base {
-  :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
 
+  /* Define CSS variables for colors used throughout the app (light mode by default) */
+  :root {
+    /* Background and foreground (text) colors */
+    --background: 210 40% 98%;
+    /* Very light background color */
+    --foreground: 222 47% 11%;
+    /* Dark text color */
+
+    /* Card component colors */
     --card: 0 0% 100%;
+    /* White cards */
     --card-foreground: 222 47% 11%;
 
+    /* Popover (like dropdown menus) colors */
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
+    /* Primary color, usually main accent color */
     --primary: 210 100% 50%;
+    /* Vibrant blue */
     --primary-foreground: 210 40% 98%;
+    /* Contrasting text */
 
+    /* Secondary colors (used for less important UI elements) */
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
 
+    /* Muted (subtle, less important) colors */
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
+    /* Accent colors (used for highlights, interactive elements) */
     --accent: 210 40% 96%;
     --accent-foreground: 222 47% 11%;
 
+    /* Destructive colors (errors, warnings, delete buttons) */
     --destructive: 0 84% 60%;
+    /* Red tone */
     --destructive-foreground: 210 40% 98%;
 
+    /* Borders, Inputs, and Rings (focus outlines) */
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 222 47% 11%;
 
+    /* Rounded corners radius for components */
     --radius: 0.5rem;
   }
 
+  /* Dark mode color overrides */
   .dark {
+    /* Darker background and lighter foreground for dark theme */
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
 
@@ -68,40 +90,51 @@
     --ring: 213 31% 91%;
   }
 
+  /* Body tag styling (applies to whole webpage content) */
   body {
     @apply bg-background text-foreground antialiased;
+    /* Background, text color, and smooth font rendering */
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Advanced typographic features (ligatures, contextual alternates) */
   }
 }
 
+/* Components: Custom CSS classes for common UI components */
 @layer components {
+
+  /* Balanced text wrapping (better text alignment visually) */
   .text-balance {
     text-wrap: balance;
   }
-  
+
+  /* Gradient text effect */
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400;
   }
-  
+
+  /* Glass card effect (transparent card with blur) */
   .glass-card {
     @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-sm dark:bg-black/20 dark:border-white/5;
   }
-  
+
+  /* Scroll reveal animation initial state (hidden, shifted down) */
   .reveal-on-scroll {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-  
+
+  /* Scroll reveal animation final state (visible, normal position) */
   .reveal-on-scroll.in-view {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
+  /* Animated underline for links */
   .link-underline {
     position: relative;
   }
-  
+
   .link-underline:after {
     content: '';
     position: absolute;
@@ -113,32 +146,33 @@
     background: linear-gradient(to right, theme('colors.blue.500'), theme('colors.teal.400'));
     transition: width 0.3s ease;
   }
-  
+
   .link-underline:hover:after {
     width: 100%;
     left: 0;
     right: auto;
   }
-  
+
+  /* Page transition animations (for navigating between pages smoothly) */
   .page-transition-enter {
     opacity: 0;
     transform: translateY(10px);
   }
-  
+
   .page-transition-enter-active {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.4s, transform 0.4s;
+    transition: 0.4s;
   }
-  
+
   .page-transition-exit {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   .page-transition-exit-active {
     opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.4s, transform 0.4s;
+    transition: 0.4s;
   }
 }

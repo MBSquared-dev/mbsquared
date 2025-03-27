@@ -1,6 +1,5 @@
-
-import { ArrowRight, Clock, Mail, MapPin, Phone } from 'lucide-react';
-import AnimatedSection from '../AnimatedSection';
+import { motion } from 'framer-motion';
+import { ArrowRight, Clock, Mail } from 'lucide-react';
 import ContactForm from '../ContactForm';
 import ScrollSection from '../ScrollSection';
 
@@ -10,28 +9,29 @@ const ContactSection = () => {
       icon: <Mail className="h-5 w-5" />,
       title: 'Email Us',
       description: 'Our friendly team is here to help.',
-      contact: 'hello@codecraft.com',
-      link: 'mailto:hello@codecraft.com'
+      contact: 'mbsquared.projects@gmail.com',
+      link: 'mailto:mbsquared.projects@gmail.com'
     },
-    {
-      icon: <MapPin className="h-5 w-5" />,
-      title: 'Visit Us',
-      description: 'Come say hello at our office.',
-      contact: '123 Tech Street, Suite 101, San Francisco, CA 94105',
-      link: 'https://maps.google.com'
-    },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      title: 'Call Us',
-      description: 'Mon-Fri from 8am to 5pm.',
-      contact: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
-    },
+    // TODO: Add map after we have a physical address
+    // {
+    //   icon: <MapPin className="h-5 w-5" />,
+    //   title: 'Visit Us',
+    //   description: 'Come say hello at our office.',
+    //   contact: '123 Tech Street, Suite 101, San Francisco, CA 94105',
+    //   link: 'https://maps.google.com'
+    // },
+    // {
+    //   icon: <Phone className="h-5 w-5" />,
+    //   title: 'Call Us',
+    //   description: 'Mon-Fri from 8am to 5pm.',
+    //   contact: '+40727137601',
+    //   link: 'tel:+40727137601'
+    // },
     {
       icon: <Clock className="h-5 w-5" />,
       title: 'Working Hours',
       description: 'We\'re available during these times.',
-      contact: 'Monday - Friday, 8am to 5pm PST',
+      contact: 'Monday - Friday, 8am to 5pm CET',
       link: null
     }
   ];
@@ -69,19 +69,32 @@ const ContactSection = () => {
     <>
       <ScrollSection id="contact" className="py-20 md:py-28 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto px-4 md:px-6">
-          <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            className="text-center max-w-3xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Let's start a conversation
             </h2>
             <p className="text-muted-foreground text-lg">
               Have a project in mind or want to learn more about our services? We're here to help and answer any questions you might have.
             </p>
-          </AnimatedSection>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 mb-16">
             {contactInfo.map((info, index) => (
-              <AnimatedSection key={info.title} delay={index * 100}>
-                <div className="glass-card rounded-xl p-6 border border-white/20 h-full">
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex"
+              >
+                <div className="glass-card rounded-xl p-6 border border-white/20 w-full h-full">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
                     {info.icon}
                   </div>
@@ -98,12 +111,17 @@ const ContactSection = () => {
                     <span className="font-medium">{info.contact}</span>
                   )}
                 </div>
-              </AnimatedSection>
+              </motion.div>
             ))}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-            <AnimatedSection animation="slide-in-left">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold">
                   Get in touch with our team
@@ -141,14 +159,25 @@ const ContactSection = () => {
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
+            </motion.div>
 
-            <AnimatedSection animation="slide-in-right">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+            >
               <ContactForm />
-            </AnimatedSection>
+            </motion.div>
           </div>
 
-          <AnimatedSection className="mt-24">
+          <motion.div
+            className="mt-24"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="glass-card rounded-xl overflow-hidden p-8 md:p-12 border border-white/20">
               <h3 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -160,10 +189,10 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-          </AnimatedSection>
+          </motion.div>
 
           {/* TODO: Add map after we have a physical address */}
-          {/* <AnimatedSection className="mt-24">
+          {/* <motion.div className="mt-24">
             <div className="relative rounded-xl overflow-hidden h-96 glass-card border border-white/20">
               <iframe
                 title="Office Location"
@@ -173,13 +202,19 @@ const ContactSection = () => {
                 style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.8)' }}
               ></iframe>
             </div>
-          </AnimatedSection> */}
+          </motion.div> */}
         </div>
       </ScrollSection>
 
       <ScrollSection id="cta" className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
-          <AnimatedSection className="relative glass-card rounded-xl overflow-hidden p-8 md:p-12 border border-white/20">
+          <motion.div
+            className="relative glass-card rounded-xl overflow-hidden p-8 md:p-12 border border-white/20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_left,_rgba(120,170,255,0.2),_transparent_60%)]"></div>
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -196,7 +231,7 @@ const ContactSection = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </div>
-          </AnimatedSection>
+          </motion.div>
         </div>
       </ScrollSection>
     </>

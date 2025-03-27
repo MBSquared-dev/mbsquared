@@ -60,7 +60,7 @@ const AboutSection = () => {
 
   return (
     <>
-      <ScrollSection id="about" className="py-20 md:py-28">
+      <ScrollSection id="about" className="py-20 md:py-28 relative">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center mb-16">
             {/* Image section with slide-in-left animation */}
