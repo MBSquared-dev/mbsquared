@@ -1,69 +1,68 @@
-# Welcome to your Lovable project
+# MBSquared - Modern Software Solutions
 
-## Project info
+## About
 
-**URL**: https://lovable.dev/projects/8ba1955f-8f2a-4f74-bbbc-f10686bc0150
+MBSquared is a team of passionate developers and strategists dedicated to creating exceptional digital experiences. We believe in using technology to solve real-world problems and help businesses thrive in the digital age.
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/8ba1955f-8f2a-4f74-bbbc-f10686bc0150) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository
+git clone <repository-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd mbsquared
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Technologies Used
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This modern web application is built with:
 
-**Use GitHub Codespaces**
+- **React 18** - A JavaScript library for building user interfaces
+- **TypeScript** - For type-safe code
+- **Vite** - Next generation frontend tooling
+- **Tailwind CSS** - A utility-first CSS framework
+- **shadcn/ui** - Re-usable components built with Radix UI and Tailwind CSS
+- **Framer Motion** - A production-ready motion library for React
+- **React Router** - For client-side routing
+- **Lucide Icons** - Beautiful & consistent icons
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Features
 
-## What technologies are used for this project?
+- 🌓 Dark/Light mode support
+- 🎨 Modern and responsive design
+- 🚀 Fast and optimized performance
+- ✨ Smooth animations and transitions
+- 📱 Mobile-friendly interface
+- 🎯 SEO optimized
 
-This project is built with .
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+src/
+├── components/     # Reusable UI components
+├── sections/       # Main page sections
+├── lib/           # Utility functions and helpers
+├── styles/        # Global styles and Tailwind config
+└── pages/         # Application pages/routes
+```
 
-## How can I deploy this project?
+## Development
 
-Simply open [Lovable](https://lovable.dev/projects/8ba1955f-8f2a-4f74-bbbc-f10686bc0150) and click on Share -> Publish.
+- Run `npm run dev` for development with hot reload
+- Run `npm run build` to create a production build
+- Run `npm run preview` to preview the production build locally
 
-## I want to use a custom domain - is that possible?
+## License
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+This project is licensed under the MIT License - see the LICENSE file for details.
