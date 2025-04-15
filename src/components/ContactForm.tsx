@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { CheckCircle2 } from 'lucide-react';
 import { useRef, useState } from 'react';
 
@@ -42,35 +43,33 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    console.log('Sending email...');
+    emailjs
+      .sendForm(
+        "service_ll03g2m",
+        "template_bv3c2xf",
+        form.current,
+        {
+          publicKey: "e-ZqJKO5QKO7CdmXn",
+        }
+      )
+      .then(
+        () => {
+          setIsSubmitting(false);
+          setIsSubmitted(true);
+          form.current?.reset();
 
-    // emailjs
-    //   .sendForm(
-    //     "service_ll03g2m",
-    //     "template_bv3c2xf",
-    //     form.current,
-    //     {
-    //       publicKey: "e-ZqJKO5QKO7CdmXn",
-    //     }
-    //   )
-    //   .then(
-    //     () => {
-    //       setIsSubmitting(false);
-    //       setIsSubmitted(true);
-    //       form.current?.reset();
-
-    //       setTimeout(() => {
-    //         setIsSubmitted(false);
-    //       }, 5000);
-    //     },
-    //     (error) => {
-    //       console.error('FAILED...', error.text);
-    //       setIsSubmitting(false);
-    //       setErrors({
-    //         submit: 'Failed to send message. Please try again later.'
-    //       });
-    //     }
-    //   );
+          setTimeout(() => {
+            setIsSubmitted(false);
+          }, 5000);
+        },
+        (error) => {
+          console.error('FAILED...', error.text);
+          setIsSubmitting(false);
+          setErrors({
+            submit: 'Failed to send message. Please try again later.'
+          });
+        }
+      );
   };
 
   return (
